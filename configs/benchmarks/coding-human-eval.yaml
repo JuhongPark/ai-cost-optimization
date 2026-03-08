@@ -1,0 +1,19 @@
+benchmark_id: coding_humaneval_v1
+task_family: coding
+dataset: HumanEval
+description: Coding benchmark with test-based correctness for early cost experiments.
+acceptance_criteria:
+  metric: pass_rate
+  threshold_type: exact
+  threshold_value: 1.0
+policy_priority:
+  - full_automation
+  - selective_hitl
+recommended_policies:
+  - strong_model_single_pass
+  - cheap_model_single_pass
+  - cheap_model_retry
+  - cheap_model_verifier_hitl
+logging:
+  schema: schemas/episode.schema.json
+  output_dir: results/raw/coding_humaneval_v1

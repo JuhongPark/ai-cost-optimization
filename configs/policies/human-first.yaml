@@ -1,0 +1,13 @@
+policy_id: human_first
+policy_class: human_first
+description: Human-first baseline for high-risk or high-recovery-cost tasks.
+model_strategy:
+  primary_model: strong_model
+  routing: optional
+retry_policy:
+  enabled: false
+verification_policy:
+  enabled: optional
+human_oversight:
+  mode: immediate
+  escalation_trigger: policy_default
