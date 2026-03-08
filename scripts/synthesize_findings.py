@@ -25,7 +25,7 @@ def find_lowest_cost_success(rows: list[dict[str, str]]) -> dict[str, str] | Non
     successful = [row for row in rows if to_float(row, "success_rate") >= 1.0]
     if not successful:
         return None
-    return min(successful, key=lambda row: (to_float(row, "avg_direct_cost_usd"), to_float(row, "avg_human_minutes")))
+    return min(successful, key=lambda row: to_float(row, "avg_weighted_total_cost"))
 
 
 def benchmark_label(stem: str) -> str:
@@ -58,8 +58,8 @@ def build_summary() -> str:
             continue
         sections.append(
             f"- Lowest-cost successful policy: `{best['policy_id']}` "
-            f"(`{best['policy_class']}`) with direct cost {best['avg_direct_cost_usd']} "
-            f"and human minutes {best['avg_human_minutes']}.\n"
+            f"(`{best['policy_class']}`) with weighted total cost {best['avg_weighted_total_cost']}, "
+            f"direct cost {best['avg_direct_cost_usd']}, and human minutes {best['avg_human_minutes']}.\n"
         )
         sections.append(
             f"- Success rate: {best['success_rate']}; latency: {best['avg_latency_seconds']}; "
@@ -68,11 +68,15 @@ def build_summary() -> str:
         if best["policy_class"] == "selective_hitl":
             cross_benchmark_claims.append(f"{label}: selective HITL was cost-competitive and threshold-satisfying")
         elif best["policy_class"] == "full_automation":
-            cross_benchmark_claims.append(f"{label}: full automation reached the threshold at the lowest direct cost")
+            cross_benchmark_claims.append(f"{label}: full automation reached the threshold at the lowest weighted total cost")
         else:
             cross_benchmark_claims.append(f"{label}: human-first remained competitive")
 
     sections.append("\n## Cross-Benchmark Interpretation\n")
+    sections.append(
+        "- Weighted total-cost formula used in this local cycle: "
+        "`direct + 0.0001*latency + 0.002*human_minutes + 0.0005*retries + 0.00025*verification`.\n"
+    )
     for claim in cross_benchmark_claims:
         sections.append(f"- {claim}\n")
 
@@ -80,7 +84,7 @@ def build_summary() -> str:
         "- Inference from the local cycle: the optimal policy class depends on task family rather than admitting a single universal winner.\n"
     )
     sections.append(
-        "- Coding favored a strong automated baseline in the current stub setup, classification favored routing, and extraction admitted a selective HITL winner.\n"
+        "- The local cycle shows that winner selection can vary across task families once weighted total cost and quality thresholds are applied.\n"
     )
     sections.append(
         "- This supports the repository thesis that direct cost alone is not sufficient; policy choice must be evaluated under explicit quality thresholds and with indirect-cost visibility.\n"

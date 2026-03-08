@@ -8,6 +8,14 @@ import json
 from collections import defaultdict
 from pathlib import Path
 
+WEIGHTS = {
+    "direct_cost_usd": 1.0,
+    "latency_seconds": 0.0001,
+    "human_minutes": 0.002,
+    "retry_count": 0.0005,
+    "verification_count": 0.00025,
+}
+
 
 def load_episode(path: Path) -> dict:
     with path.open("r", encoding="utf-8") as handle:
@@ -16,6 +24,17 @@ def load_episode(path: Path) -> dict:
 
 def mean(values: list[float]) -> float:
     return sum(values) / len(values) if values else 0.0
+
+
+def weighted_total_cost(episode: dict) -> float:
+    derived = episode["derived_metrics"]
+    return (
+        WEIGHTS["direct_cost_usd"] * float(derived["total_direct_cost_usd"])
+        + WEIGHTS["latency_seconds"] * float(derived["total_latency_seconds"])
+        + WEIGHTS["human_minutes"] * float(derived["total_human_minutes"])
+        + WEIGHTS["retry_count"] * float(derived["total_retry_count"])
+        + WEIGHTS["verification_count"] * float(derived["total_verification_count"])
+    )
 
 
 def aggregate(directory: Path) -> list[dict]:
@@ -39,6 +58,7 @@ def aggregate(directory: Path) -> list[dict]:
                 "avg_human_minutes": round(mean([float(episode["derived_metrics"]["total_human_minutes"]) for episode in episodes]), 4),
                 "avg_retry_count": round(mean([float(episode["derived_metrics"]["total_retry_count"]) for episode in episodes]), 4),
                 "avg_verification_count": round(mean([float(episode["derived_metrics"]["total_verification_count"]) for episode in episodes]), 4),
+                "avg_weighted_total_cost": round(mean([weighted_total_cost(episode) for episode in episodes]), 6),
             }
         )
     return rows
@@ -67,10 +87,15 @@ def write_markdown(path: Path, benchmark_id: str, rows: list[dict]) -> None:
         for row in rows:
             handle.write("| " + " | ".join(str(row[key]) for key in headers) + " |\n")
         handle.write("\n")
-        best = max(rows, key=lambda row: (row["success_rate"], -row["avg_direct_cost_usd"]))
+        successful = [row for row in rows if float(row["success_rate"]) >= 1.0]
+        best = min(successful or rows, key=lambda row: (float(row["avg_weighted_total_cost"]), -float(row["success_rate"])))
         handle.write(
-            "Leading stub policy by threshold-satisfying success rate: "
-            f"`{best['policy_id']}` ({best['policy_class']}) with success rate {best['success_rate']}.\n"
+            "Weighted total-cost formula: "
+            "`direct + 0.0001*latency + 0.002*human_minutes + 0.0005*retries + 0.00025*verification`.\n\n"
+        )
+        handle.write(
+            "Leading stub policy by weighted total cost among threshold-satisfying policies: "
+            f"`{best['policy_id']}` ({best['policy_class']}) with weighted total cost {best['avg_weighted_total_cost']}.\n"
         )
 
 

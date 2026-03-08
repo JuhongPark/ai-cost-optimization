@@ -12,6 +12,13 @@
   "final_status": "human_escalation",
   "failure_category": "human_escalation",
   "quality_score": 0.96,
+  "quality_metrics": {
+    "accuracy": null,
+    "pass_rate": 0.96,
+    "f1": null,
+    "precision": null,
+    "recall": null
+  },
   "quality_threshold_met": false,
   "attempts": [
     {

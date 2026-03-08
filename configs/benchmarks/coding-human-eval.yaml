@@ -14,6 +14,7 @@ recommended_policies:
   - cheap_model_single_pass
   - cheap_model_retry
   - cheap_model_verifier_hitl
+  - human_first
 logging:
   schema: schemas/episode.schema.json
   output_dir: results/raw/coding_humaneval_v1
