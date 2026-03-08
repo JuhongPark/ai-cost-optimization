@@ -1,0 +1,14 @@
+policy_id: difficulty_routing
+policy_class: full_automation
+description: Route easy cases to a cheap model and hard cases to a strong model.
+model_strategy:
+  primary_model: cheap_model
+  secondary_model: strong_model
+  routing: difficulty_based
+retry_policy:
+  enabled: false
+verification_policy:
+  enabled: false
+human_oversight:
+  mode: terminal_only
+  escalation_trigger: final_failure_only

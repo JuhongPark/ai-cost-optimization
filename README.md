@@ -13,3 +13,6 @@ Given that assumption, the central question is not AI's problem-solving capabili
 - `docs/experiments/`: experiment designs and results
 - `docs/references/`: references and reading notes
 - `docs/reports/`: synthesis documents and practical guidance
+- `schemas/`: machine-readable schemas for experiment artifacts
+- `configs/`: benchmark and policy configurations
+- `results/`: raw logs, aggregate tables, figures, and summaries

@@ -1,0 +1,282 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/episode.schema.json",
+  "title": "ProblemSolvingEpisode",
+  "type": "object",
+  "required": [
+    "episode_id",
+    "task_family",
+    "task_id",
+    "policy_id",
+    "policy_class",
+    "model_id",
+    "prompt_version",
+    "started_at",
+    "ended_at",
+    "duration_seconds",
+    "final_status",
+    "quality_threshold_met",
+    "attempts",
+    "indirect_cost"
+  ],
+  "properties": {
+    "episode_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_family": {
+      "type": "string",
+      "enum": [
+        "coding",
+        "classification",
+        "extraction",
+        "agent_workflow"
+      ]
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "policy_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "policy_class": {
+      "type": "string",
+      "enum": [
+        "full_automation",
+        "selective_hitl",
+        "human_first"
+      ]
+    },
+    "model_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "prompt_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ended_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "duration_seconds": {
+      "type": "number",
+      "minimum": 0
+    },
+    "final_status": {
+      "type": "string",
+      "enum": [
+        "success",
+        "failure",
+        "human_escalation",
+        "budget_exhausted"
+      ]
+    },
+    "failure_category": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "wrong_answer",
+        "quality_below_threshold",
+        "timeout",
+        "budget_exhausted",
+        "tool_failure",
+        "verification_failure",
+        "routing_failure",
+        "fallback_failure",
+        "unrecovered_workflow_failure",
+        "human_escalation",
+        "human_rejection",
+        null
+      ]
+    },
+    "quality_score": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "quality_threshold_met": {
+      "type": "boolean"
+    },
+    "attempts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/attempt"
+      }
+    },
+    "indirect_cost": {
+      "$ref": "#/$defs/indirectCost"
+    },
+    "derived_metrics": {
+      "$ref": "#/$defs/derivedMetrics"
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "$defs": {
+    "attempt": {
+      "type": "object",
+      "required": [
+        "attempt_index",
+        "attempt_model_id",
+        "input_tokens",
+        "output_tokens",
+        "attempt_latency_seconds",
+        "attempt_cost_usd",
+        "verification_count",
+        "tool_call_count",
+        "tool_cost_usd",
+        "attempt_outcome"
+      ],
+      "properties": {
+        "attempt_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "attempt_model_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "input_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "output_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "attempt_latency_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "attempt_cost_usd": {
+          "type": "number",
+          "minimum": 0
+        },
+        "verification_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "tool_call_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "tool_cost_usd": {
+          "type": "number",
+          "minimum": 0
+        },
+        "attempt_outcome": {
+          "type": "string",
+          "enum": [
+            "accepted",
+            "rejected",
+            "failed",
+            "escalated"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "indirectCost": {
+      "type": "object",
+      "required": [
+        "retry_count",
+        "human_review_count",
+        "human_review_minutes",
+        "human_intervention_count",
+        "recovery_step_count",
+        "routing_decision_count",
+        "fallback_path_used"
+      ],
+      "properties": {
+        "retry_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "human_review_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "human_review_minutes": {
+          "type": "number",
+          "minimum": 0
+        },
+        "human_intervention_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "escalation_trigger": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "recovery_step_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "routing_decision_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "fallback_path_used": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "derivedMetrics": {
+      "type": "object",
+      "properties": {
+        "total_direct_cost_usd": {
+          "type": "number",
+          "minimum": 0
+        },
+        "total_tool_cost_usd": {
+          "type": "number",
+          "minimum": 0
+        },
+        "total_token_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "total_latency_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "total_human_minutes": {
+          "type": "number",
+          "minimum": 0
+        },
+        "total_retry_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "total_verification_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "total_recovery_steps": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

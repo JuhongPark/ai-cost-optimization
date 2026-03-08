@@ -1,0 +1,13 @@
+policy_id: strong_model_single_pass
+policy_class: full_automation
+description: Strong model baseline with no planned retries and no proactive human review.
+model_strategy:
+  primary_model: strong_model
+  routing: none
+retry_policy:
+  enabled: false
+verification_policy:
+  enabled: false
+human_oversight:
+  mode: terminal_only
+  escalation_trigger: final_failure_only
