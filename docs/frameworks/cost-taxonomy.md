@@ -89,6 +89,7 @@ Relevant research:
 Implication:
 
 - human involvement should be modeled as a constrained and priced resource, not as free fallback capacity
+- the relevant optimization question is often how to allocate human attention, not how to eliminate it entirely
 
 ### 2.2 Retry and self-correction cost
 

@@ -43,6 +43,8 @@ These strategies usually produce the clearest near-term savings, but they can hi
 
 These strategies are central to the repository because they expose the gap between inference bill reduction and full workflow efficiency.
 
+Human escalation should be interpreted as an allocation problem rather than a failure of automation. In some task families, selective review may be the lowest-total-cost strategy.
+
 ## Recommended First Comparison Set
 
 The first comparative research cycle should test:

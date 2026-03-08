@@ -37,6 +37,10 @@ The most practical early gains usually come from:
 
 Human review should be measured explicitly in minutes, rates, or queue load rather than treated as free safety margin.
 
+### 7. Do not assume full automation is the optimal endpoint
+
+In many workflows, the best policy is not zero human involvement but selective escalation. If a cheaper model path causes repeated retries or downstream correction work, targeted human review may lower total cost.
+
 ## Operational Checklist
 
 - define the task-level quality threshold
