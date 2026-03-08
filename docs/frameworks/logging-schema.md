@@ -21,6 +21,7 @@ Each problem-solving episode should include the following fields.
 | `task_family` | string | High-level family such as `coding`, `classification`, `extraction`, or `agent_workflow`. |
 | `task_id` | string | Unique identifier for the task instance. |
 | `policy_id` | string | Identifier for the execution policy. |
+| `policy_class` | enum | `full_automation`, `selective_hitl`, or `human_first`. |
 | `model_id` | string | Primary model used in the episode. |
 | `prompt_version` | string | Prompt or policy version identifier. |
 | `started_at` | timestamp | Episode start time. |
@@ -58,6 +59,7 @@ Indirect-cost accounting should include:
 | `human_review_count` | integer | Number of human review events. |
 | `human_review_minutes` | float | Estimated human review time. |
 | `human_intervention_count` | integer | Number of explicit interventions or handoffs. |
+| `escalation_trigger` | string or null | Trigger for escalation, such as confidence threshold, verifier failure, or policy default. |
 | `recovery_step_count` | integer | Number of recovery or fallback steps. |
 | `routing_decision_count` | integer | Number of routing decisions. |
 | `fallback_path_used` | boolean | Whether any fallback path was activated. |

@@ -20,6 +20,7 @@
 - routing
 - retry-enabled policy
 - verification-enabled policy
+- full automation vs selective HITL vs human-first
 
 ### 4. Extend indirect-cost measurement
 
