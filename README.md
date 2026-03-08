@@ -17,3 +17,12 @@ Given that assumption, the central question is not AI's problem-solving capabili
 - `configs/`: benchmark and policy configurations
 - `scripts/`: validation, stub execution, and aggregation helpers
 - `results/`: raw logs, aggregate tables, figures, and summaries
+
+## Local Cycle
+
+The repository can run a full local first-cycle prototype:
+
+1. generate deterministic stub episode logs from benchmark and policy configs
+2. validate raw logs against the episode schema
+3. aggregate results into tables and benchmark summaries
+4. synthesize a cross-benchmark final summary
