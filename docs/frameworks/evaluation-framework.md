@@ -131,6 +131,22 @@ All benchmark comparisons should include at least the following policies:
 - retry-enabled policy
 - verification-enabled policy
 
+In addition, the framework should explicitly compare three policy classes:
+
+- full automation
+- selective human-in-the-loop
+- human-first or immediate escalation
+
+This comparison is necessary because indirect-cost optimization is not equivalent to eliminating human oversight.
+
+## Human Oversight Allocation Rule
+
+Human review should be treated as a decision variable inside the policy, not as an external exception. For any task family, the evaluation should ask:
+
+1. When is automation sufficient?
+2. When does selective escalation reduce total cost?
+3. When does human-first handling outperform repeated AI failure and recovery?
+
 ## Failure Accounting
 
 Failure should not disappear inside averages. Episodes that fail must still be counted and categorized.

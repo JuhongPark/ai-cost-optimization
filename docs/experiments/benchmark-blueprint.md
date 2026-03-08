@@ -109,6 +109,19 @@ Each task family should be evaluated under the same initial policy set:
 - retry-enabled policy
 - verification-enabled policy
 
+## Policy-Class Comparison
+
+Each benchmark family should also be evaluated across three oversight classes:
+
+1. **Full automation**
+   - the system completes the episode without human review unless it fails completely
+2. **Selective human-in-the-loop**
+   - the system escalates only on predefined triggers such as low confidence, verifier failure, or repeated retry failure
+3. **Human-first or immediate escalation**
+   - a human reviews or completes the task at the start or after the first model output by policy
+
+This comparison is required because a lower-AI-cost policy may still have higher total cost once human review and recovery are included.
+
 ## Episode Logging Requirements
 
 Each benchmark run should log:
@@ -135,3 +148,5 @@ Each benchmark run should log:
 3. When does verification lower total cost instead of increasing it?
 4. Which task family creates the largest indirect-cost burden?
 5. Which policy reaches the quality threshold at the lowest total cost?
+6. When is selective human oversight cheaper than full automation?
+7. For which task families is human-first handling competitively priced?
