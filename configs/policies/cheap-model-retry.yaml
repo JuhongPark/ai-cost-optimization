@@ -1,0 +1,15 @@
+policy_id: cheap_model_retry
+policy_class: full_automation
+description: Cheap model with limited retries before terminal failure.
+model_strategy:
+  primary_model: cheap_model
+  secondary_model: cheap_model
+  routing: none
+retry_policy:
+  enabled: true
+  max_retries: 2
+verification_policy:
+  enabled: false
+human_oversight:
+  mode: terminal_only
+  escalation_trigger: final_failure_only

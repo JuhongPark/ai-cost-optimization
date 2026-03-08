@@ -15,4 +15,5 @@ Given that assumption, the central question is not AI's problem-solving capabili
 - `docs/reports/`: synthesis documents and practical guidance
 - `schemas/`: machine-readable schemas for experiment artifacts
 - `configs/`: benchmark and policy configurations
+- `scripts/`: validation, stub execution, and aggregation helpers
 - `results/`: raw logs, aggregate tables, figures, and summaries
