@@ -8,6 +8,8 @@ The goal of this research is to evaluate and optimize AI problem solving from a 
 
 This research starts from a working assumption: AI problem-solving capability is already strong enough for many practical tasks and will likely continue to improve. Given that assumption, the central question is not capability itself, but how to evaluate AI problem solving in cost terms and optimize it under explicit quality constraints.
 
+This does not imply that human involvement should always be eliminated. Instead, human oversight is treated as a limited and priced resource that should be allocated optimally. A central research question is when the lowest-total-cost policy is fully automated, selectively human-in-the-loop, or human-first.
+
 ## Scope
 
 The research scope is practical AI usage in workflows where quality can be measured and resource consumption can be logged consistently. The unit of analysis is not a single model call, but a full problem-solving episode that may include routing, tool use, retries, verification, human intervention, and failure recovery.
@@ -19,6 +21,7 @@ The research scope is practical AI usage in workflows where quality can be measu
 3. Which strategies reduce total cost while preserving acceptable task quality?
 4. How does the cost-quality tradeoff change across task types, model choices, and execution policies?
 5. What kind of unified framework can evaluate model calls, tool use, retries, and human oversight as parts of the same cost-sensitive process?
+6. When is selective human oversight cheaper than full automation or full human handling?
 
 ## Cost Model
 
@@ -37,6 +40,8 @@ This project treats AI problem solving as the total cost required to reach an ac
 - retry and self-correction cost
 - failure recovery cost
 - orchestration overhead
+
+Indirect-cost optimization therefore includes not only reducing unnecessary human intervention, but also deciding when human review, escalation, or approval is the most cost-effective option.
 
 ## Cost Function
 

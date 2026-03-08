@@ -91,6 +91,10 @@ Main risk:
 
 - cheap AI paths can become expensive if they overuse human fallback
 
+Interpretation:
+
+- the goal is not automatic human removal, but cost-effective allocation of scarce human attention
+
 ### 7. Serving Optimization
 
 Improve efficiency of token generation or response handling without changing the task policy.

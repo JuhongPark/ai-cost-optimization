@@ -4,6 +4,8 @@
 
 This research program treats AI problem solving as a quality-constrained total-cost process rather than a pure capability problem. The central argument is that meaningful evaluation should include both direct cost and indirect cost.
 
+An important clarification is that indirect-cost reduction does not imply removing humans from the loop by default. Human oversight is better modeled as a constrained, priced resource. The relevant optimization question is when to automate, when to escalate selectively, and when human review is itself the cheapest reliable policy.
+
 ## What Has Been Established in This Research Cycle
 
 ### 1. Conceptual foundation
@@ -46,6 +48,8 @@ The repository now has a first version of:
 ## Main Research Claim Emerging from This Cycle
 
 The strongest candidate contribution for this repository is a workflow-level framework for evaluating AI problem solving under explicit quality constraints, with direct and indirect cost treated as separate but jointly analyzed dimensions.
+
+This includes treating human oversight as part of the optimization target rather than as an external fallback. The mature research direction is not "remove humans everywhere," but "allocate scarce human attention where it has the highest cost-adjusted value."
 
 ## Current Recommendation
 
