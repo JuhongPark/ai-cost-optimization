@@ -16,6 +16,7 @@ Given that assumption, the central question is not AI's problem-solving capabili
 - `schemas/`: machine-readable schemas for experiment artifacts
 - `configs/`: benchmark and policy configurations
 - `scripts/`: validation, stub execution, and aggregation helpers
+- `benchmarks/`: local benchmark task definitions for the real execution layer
 - `results/`: raw logs, aggregate tables, figures, and summaries
 
 ## Local Cycle
@@ -26,3 +27,9 @@ The repository can run a full local first-cycle prototype:
 2. validate raw logs against the episode schema
 3. aggregate results into tables and benchmark summaries
 4. synthesize a cross-benchmark final summary
+
+It also includes a provider-backed execution layer with:
+
+1. benchmark task loading from `benchmarks/`
+2. provider adapters from `configs/providers/`
+3. a real runner that can execute through an offline heuristic provider or an OpenAI-compatible endpoint

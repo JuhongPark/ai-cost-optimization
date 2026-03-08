@@ -1,0 +1,2 @@
+{"task_id":"classification_001","prompt":"Question: Which planet is known as the Red Planet?\nA. Earth\nB. Mars\nC. Venus\nD. Jupiter","expected_answer":"B","metadata":{"difficulty":"easy"}}
+{"task_id":"classification_002","prompt":"Question: What is the capital of France?\nA. Madrid\nB. Rome\nC. Paris\nD. Berlin","expected_answer":"C","metadata":{"difficulty":"easy"}}

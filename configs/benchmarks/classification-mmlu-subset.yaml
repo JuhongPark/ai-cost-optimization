@@ -1,6 +1,7 @@
 benchmark_id: classification_mmlu_subset_v1
 task_family: classification
 dataset: MMLU_subset
+dataset_path: benchmarks/classification/mmlu_subset_sample.jsonl
 description: Classification-style benchmark for routing and confidence-based escalation studies.
 acceptance_criteria:
   metric: accuracy
@@ -19,3 +20,4 @@ recommended_policies:
 logging:
   schema: schemas/episode.schema.json
   output_dir: results/raw/classification_mmlu_subset_v1
+  real_run_output_dir: results/raw_real/classification_mmlu_subset_v1

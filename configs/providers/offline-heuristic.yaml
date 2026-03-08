@@ -1,0 +1,6 @@
+provider_id: offline_heuristic
+provider_type: offline_heuristic
+description: Local no-network provider for smoke-testing the real execution layer.
+models:
+  strong_model: strong_model
+  cheap_model: cheap_model

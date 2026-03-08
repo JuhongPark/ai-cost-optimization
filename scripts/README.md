@@ -7,3 +7,5 @@ This directory stores runnable helpers for the experiment skeleton.
 - `aggregate_results.py`: aggregate raw episode logs into CSV and Markdown summaries
 - `run_full_cycle.py`: run the full local benchmark cycle end to end
 - `synthesize_findings.py`: write a cross-benchmark final summary from aggregate outputs
+- `run_real_benchmark.py`: run benchmark tasks through a provider-backed execution layer
+- `run_real_cycle.py`: run the provider-backed execution layer across all benchmark configs

@@ -94,7 +94,7 @@ def write_markdown(path: Path, benchmark_id: str, rows: list[dict]) -> None:
             "`direct + 0.0001*latency + 0.002*human_minutes + 0.0005*retries + 0.00025*verification`.\n\n"
         )
         handle.write(
-            "Leading stub policy by weighted total cost among threshold-satisfying policies: "
+            "Leading policy by weighted total cost among threshold-satisfying policies: "
             f"`{best['policy_id']}` ({best['policy_class']}) with weighted total cost {best['avg_weighted_total_cost']}.\n"
         )
 
