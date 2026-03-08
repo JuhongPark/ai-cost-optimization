@@ -12,3 +12,4 @@ Given that assumption, the central question is not AI's problem-solving capabili
 - `docs/frameworks/`: evaluation frameworks and cost models
 - `docs/experiments/`: experiment designs and results
 - `docs/references/`: references and reading notes
+- `docs/reports/`: synthesis documents and practical guidance
