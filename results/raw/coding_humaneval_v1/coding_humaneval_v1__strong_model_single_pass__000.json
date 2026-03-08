@@ -1,0 +1,51 @@
+{
+  "episode_id": "coding_humaneval_v1__strong_model_single_pass__000",
+  "task_family": "coding",
+  "task_id": "coding_humaneval_v1_task_000",
+  "policy_id": "strong_model_single_pass",
+  "policy_class": "full_automation",
+  "model_id": "strong_model",
+  "prompt_version": "v1",
+  "started_at": "2026-03-08T12:00:00+00:00",
+  "ended_at": "2026-03-08T12:00:08.400000+00:00",
+  "duration_seconds": 8.4,
+  "final_status": "success",
+  "failure_category": null,
+  "quality_score": 1.0,
+  "quality_threshold_met": true,
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "attempt_model_id": "strong_model",
+      "input_tokens": 700,
+      "output_tokens": 320,
+      "attempt_latency_seconds": 8.4,
+      "attempt_cost_usd": 0.006968,
+      "verification_count": 0,
+      "tool_call_count": 0,
+      "tool_cost_usd": 0.0,
+      "attempt_outcome": "accepted"
+    }
+  ],
+  "indirect_cost": {
+    "retry_count": 0,
+    "human_review_count": 0,
+    "human_review_minutes": 0.0,
+    "human_intervention_count": 0,
+    "escalation_trigger": null,
+    "recovery_step_count": 0,
+    "routing_decision_count": 0,
+    "fallback_path_used": false
+  },
+  "derived_metrics": {
+    "total_direct_cost_usd": 0.006968,
+    "total_tool_cost_usd": 0.0,
+    "total_token_count": 1020,
+    "total_latency_seconds": 8.4,
+    "total_human_minutes": 0.0,
+    "total_retry_count": 0,
+    "total_verification_count": 0,
+    "total_recovery_steps": 0
+  },
+  "notes": "Deterministic stub episode generated from benchmark and policy config."
+}

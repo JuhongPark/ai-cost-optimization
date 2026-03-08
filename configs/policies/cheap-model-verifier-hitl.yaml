@@ -1,0 +1,16 @@
+policy_id: cheap_model_verifier_hitl
+policy_class: selective_hitl
+description: Cheap model policy with verification and selective human escalation on failure.
+model_strategy:
+  primary_model: cheap_model
+  secondary_model: strong_model
+  routing: none
+retry_policy:
+  enabled: true
+  max_retries: 1
+verification_policy:
+  enabled: true
+  verifier: coding_test_suite
+human_oversight:
+  mode: selective
+  escalation_trigger: verifier_failure_or_retry_exhaustion

@@ -1,0 +1,19 @@
+policy_id: tool_assisted_extraction
+policy_class: full_automation
+description: Extraction policy that uses tools or external APIs before resorting to human review.
+model_strategy:
+  primary_model: cheap_model
+  secondary_model: strong_model
+  routing: optional
+retry_policy:
+  enabled: true
+  max_retries: 1
+verification_policy:
+  enabled: true
+  verifier: field_level_validation
+tool_policy:
+  enabled: true
+  tool_type: structured_extraction_helper
+human_oversight:
+  mode: terminal_only
+  escalation_trigger: final_failure_only

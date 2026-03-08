@@ -1,0 +1,63 @@
+{
+  "episode_id": "extraction_structured_fields_v1__tool_assisted_extraction__001",
+  "task_family": "extraction",
+  "task_id": "extraction_structured_fields_v1_task_001",
+  "policy_id": "tool_assisted_extraction",
+  "policy_class": "full_automation",
+  "model_id": "cheap_model",
+  "prompt_version": "v1",
+  "started_at": "2026-03-08T12:01:00+00:00",
+  "ended_at": "2026-03-08T12:01:09.315000+00:00",
+  "duration_seconds": 9.315,
+  "final_status": "success",
+  "failure_category": null,
+  "quality_score": 0.91,
+  "quality_threshold_met": true,
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "attempt_model_id": "cheap_model",
+      "input_tokens": 900,
+      "output_tokens": 180,
+      "attempt_latency_seconds": 5.175,
+      "attempt_cost_usd": 0.002772,
+      "verification_count": 1,
+      "tool_call_count": 2,
+      "tool_cost_usd": 0.002,
+      "attempt_outcome": "accepted"
+    },
+    {
+      "attempt_index": 1,
+      "attempt_model_id": "strong_model",
+      "input_tokens": 450,
+      "output_tokens": 90,
+      "attempt_latency_seconds": 4.14,
+      "attempt_cost_usd": 0.001386,
+      "verification_count": 1,
+      "tool_call_count": 2,
+      "tool_cost_usd": 0.002,
+      "attempt_outcome": "accepted"
+    }
+  ],
+  "indirect_cost": {
+    "retry_count": 1,
+    "human_review_count": 0,
+    "human_review_minutes": 0.0,
+    "human_intervention_count": 0,
+    "escalation_trigger": null,
+    "recovery_step_count": 0,
+    "routing_decision_count": 0,
+    "fallback_path_used": false
+  },
+  "derived_metrics": {
+    "total_direct_cost_usd": 0.008158,
+    "total_tool_cost_usd": 0.004,
+    "total_token_count": 1620,
+    "total_latency_seconds": 9.315,
+    "total_human_minutes": 0.0,
+    "total_retry_count": 1,
+    "total_verification_count": 2,
+    "total_recovery_steps": 0
+  },
+  "notes": "Deterministic stub episode generated from benchmark and policy config."
+}
