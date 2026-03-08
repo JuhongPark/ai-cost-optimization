@@ -18,6 +18,7 @@ recommended_policies:
   - cheap_model_single_pass
   - tool_assisted_extraction
   - verifier_gated_hitl
+  - human_first
 logging:
   schema: schemas/episode.schema.json
   output_dir: results/raw/extraction_structured_fields_v1

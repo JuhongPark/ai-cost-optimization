@@ -104,6 +104,45 @@
         "null"
       ]
     },
+    "quality_metrics": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "accuracy": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "pass_rate": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "f1": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "precision": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "recall": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
     "quality_threshold_met": {
       "type": "boolean"
     },

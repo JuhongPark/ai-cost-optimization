@@ -132,6 +132,58 @@ def quality_threshold(benchmark_config: dict) -> float:
     return float(threshold)
 
 
+def quality_metrics(task_family: str, quality: float, policy_class: str) -> dict:
+    if task_family == "coding":
+        return {
+            "accuracy": None,
+            "pass_rate": quality,
+            "f1": None,
+            "precision": None,
+            "recall": None,
+        }
+    if task_family == "classification":
+        return {
+            "accuracy": quality,
+            "pass_rate": None,
+            "f1": quality - 0.01,
+            "precision": None,
+            "recall": None,
+        }
+    if task_family == "extraction":
+        precision = min(1.0, quality + (0.03 if policy_class == "selective_hitl" else 0.01))
+        recall = max(0.0, quality - 0.02)
+        return {
+            "accuracy": None,
+            "pass_rate": None,
+            "f1": quality,
+            "precision": round(precision, 4),
+            "recall": round(recall, 4),
+        }
+    return {
+        "accuracy": None,
+        "pass_rate": None,
+        "f1": quality,
+        "precision": None,
+        "recall": None,
+    }
+
+
+def threshold_met_for_benchmark(benchmark_config: dict, metrics: dict) -> bool:
+    metric_name = benchmark_config["acceptance_criteria"]["metric"]
+    primary_threshold = float(benchmark_config["acceptance_criteria"]["threshold_value"])
+    primary_value = metrics.get(metric_name)
+    if primary_value is None or float(primary_value) < primary_threshold:
+        return False
+
+    secondary = benchmark_config.get("secondary_criteria", {})
+    for key, threshold in secondary.items():
+        metric_key = key.removesuffix("_min")
+        metric_value = metrics.get(metric_key)
+        if metric_value is None or float(metric_value) < float(threshold):
+            return False
+    return True
+
+
 def metric_cost_usd(base_input: int, base_output: int, multiplier: float) -> float:
     token_cost = (base_input * 0.000002) + (base_output * 0.000004)
     return round(token_cost * multiplier, 6)
@@ -189,7 +241,8 @@ def build_episode(benchmark_config: dict, policy_config: dict, episode_index: in
     total_latency = round(sum(attempt["attempt_latency_seconds"] for attempt in attempts), 3)
     total_verification = sum(attempt["verification_count"] for attempt in attempts)
     total_tool_cost = round(sum(attempt["tool_cost_usd"] for attempt in attempts), 6)
-    threshold_met = quality >= quality_threshold(benchmark_config)
+    metrics = quality_metrics(task_family, quality, policy_config["policy_class"])
+    threshold_met = threshold_met_for_benchmark(benchmark_config, metrics)
     final_status = "success" if threshold_met else ("human_escalation" if policy_config["policy_class"] != "full_automation" else "failure")
     failure_category = None if threshold_met else ("human_escalation" if final_status == "human_escalation" else "quality_below_threshold")
 
@@ -207,6 +260,7 @@ def build_episode(benchmark_config: dict, policy_config: dict, episode_index: in
         "final_status": final_status,
         "failure_category": failure_category,
         "quality_score": round(quality, 4),
+        "quality_metrics": metrics,
         "quality_threshold_met": threshold_met,
         "attempts": attempts,
         "indirect_cost": {

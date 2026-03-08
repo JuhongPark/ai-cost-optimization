@@ -12,6 +12,13 @@
   "final_status": "failure",
   "failure_category": "quality_below_threshold",
   "quality_score": 0.75,
+  "quality_metrics": {
+    "accuracy": 0.75,
+    "pass_rate": null,
+    "f1": 0.74,
+    "precision": null,
+    "recall": null
+  },
   "quality_threshold_met": false,
   "attempts": [
     {

@@ -15,6 +15,7 @@ recommended_policies:
   - cheap_model_single_pass
   - difficulty_routing
   - confidence_gated_hitl
+  - human_first
 logging:
   schema: schemas/episode.schema.json
   output_dir: results/raw/classification_mmlu_subset_v1
