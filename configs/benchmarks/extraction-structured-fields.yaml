@@ -1,6 +1,7 @@
 benchmark_id: extraction_structured_fields_v1
 task_family: extraction
 dataset: structured_field_extraction
+dataset_path: benchmarks/extraction/structured_fields_sample.jsonl
 description: Structured extraction benchmark for tool use and selective review policies.
 acceptance_criteria:
   metric: f1
@@ -22,3 +23,4 @@ recommended_policies:
 logging:
   schema: schemas/episode.schema.json
   output_dir: results/raw/extraction_structured_fields_v1
+  real_run_output_dir: results/raw_real/extraction_structured_fields_v1

@@ -1,0 +1,10 @@
+provider_id: openai_compatible_example
+provider_type: openai_compatible
+description: Example template for a real HTTP model endpoint.
+base_url_env: OPENAI_BASE_URL
+api_key_env: OPENAI_API_KEY
+models:
+  strong_model: gpt-4.1
+  cheap_model: gpt-4.1-mini
+request:
+  timeout_seconds: 60

@@ -1,0 +1,58 @@
+{
+  "episode_id": "coding_humaneval_v1__cheap_model_retry__coding_001",
+  "task_family": "coding",
+  "task_id": "coding_001",
+  "policy_id": "cheap_model_retry",
+  "policy_class": "full_automation",
+  "model_id": "cheap_model",
+  "prompt_version": "real_v1",
+  "started_at": "2026-03-08T13:00:00+00:00",
+  "ended_at": "2026-03-08T13:00:00.900000+00:00",
+  "duration_seconds": 0.9,
+  "final_status": "failure",
+  "failure_category": "quality_below_threshold",
+  "quality_score": 0.0,
+  "quality_metrics": {
+    "accuracy": null,
+    "pass_rate": 0.0,
+    "f1": null,
+    "precision": null,
+    "recall": null
+  },
+  "quality_threshold_met": false,
+  "attempts": [
+    {
+      "attempt_index": 0,
+      "attempt_model_id": "cheap_model",
+      "input_tokens": 25,
+      "output_tokens": 7,
+      "attempt_latency_seconds": 0.9,
+      "attempt_cost_usd": 0.0,
+      "verification_count": 0,
+      "tool_call_count": 0,
+      "tool_cost_usd": 0.0,
+      "attempt_outcome": "failed"
+    }
+  ],
+  "indirect_cost": {
+    "retry_count": 1,
+    "human_review_count": 0,
+    "human_review_minutes": 0.0,
+    "human_intervention_count": 0,
+    "escalation_trigger": null,
+    "recovery_step_count": 1,
+    "routing_decision_count": 0,
+    "fallback_path_used": true
+  },
+  "derived_metrics": {
+    "total_direct_cost_usd": 0.0,
+    "total_tool_cost_usd": 0.0,
+    "total_token_count": 32,
+    "total_latency_seconds": 0.9,
+    "total_human_minutes": 0.0,
+    "total_retry_count": 1,
+    "total_verification_count": 0,
+    "total_recovery_steps": 1
+  },
+  "notes": "Real execution layer episode using provider adapter."
+}

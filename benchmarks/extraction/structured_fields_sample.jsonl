@@ -1,0 +1,2 @@
+{"task_id":"extraction_001","prompt":"Extract fields from this text: Name: Alice Kim; Role: Data Scientist; Company: Acme Labs","expected_answer":{"name":"Alice Kim","role":"Data Scientist","company":"Acme Labs"},"metadata":{"difficulty":"easy"}}
+{"task_id":"extraction_002","prompt":"Extract fields from this text: Name: Brian Lee; Role: Product Manager; Company: Northwind","expected_answer":{"name":"Brian Lee","role":"Product Manager","company":"Northwind"},"metadata":{"difficulty":"easy"}}
