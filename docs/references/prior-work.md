@@ -84,6 +84,170 @@ Relevance to this project:
 - suggests that routing policies should be evaluated under throughput constraints
 - motivates separating research tracks for offline experimental quality-cost tradeoffs and online deployment efficiency
 
+## MIT Research Section
+
+MIT does not appear to treat AI cost optimization as one single centralized lab topic. Instead, the work is distributed across several groups that together cover a broad slice of the problem.
+
+### 1. MIT FutureTech: cost-adjusted AI progress and automation economics
+
+**The Price of Progress: Algorithmic Efficiency and the Falling Cost of AI Inference (FutureTech, November 28, 2025)**  
+Source: https://futuretech.mit.edu/publication/the-price-of-progress-algorithmic-efficiency-and-the-falling-cost-of-ai-inference
+
+This work is one of the most directly relevant MIT contributions to this repository. It argues that benchmark progress should be evaluated together with the falling cost required to reach a fixed level of performance.
+
+Relevance to this project:
+
+- supports reporting cost at fixed quality rather than quality alone
+- strengthens the case for cost-adjusted benchmark analysis
+- helps motivate model substitution and routing based on price-performance rather than raw capability
+
+Likely lead group and researchers:
+
+- MIT FutureTech
+- Neil Thompson as the central lead figure
+- Hans Gundlach, Jayson Lynch, and Matthias Mertens as coauthors
+
+**AI and Scale: A Quantitative Task-Based Theory of Automation (FutureTech, January 1, 2026)**  
+Source: https://futuretech.mit.edu/publication/ai-and-scale-a-quantitative-task-based-theory-of-automation
+
+This paper studies when AI automation is economically worthwhile once fixed deployment cost and task scale are considered explicitly.
+
+Relevance to this project:
+
+- sharpens the distinction between fixed deployment cost and marginal inference cost
+- extends the cost lens from single episodes to deployment decisions
+- is directly relevant for deciding when automation beats human-first or human-in-the-loop policies
+
+Likely lead group and researchers:
+
+- MIT FutureTech
+- Danial Lashkari, Wensu Li, Christina Qiu, and Neil Thompson
+
+### 2. LIDS / IDSS / MechE: adaptive compute and efficient policy learning
+
+**A smarter way for large language models to think about hard problems (MIT Schwarzman College of Computing, December 4, 2025)**  
+Source: https://computing.mit.edu/news/a-smarter-way-for-large-language-models-to-think-about-hard-problems/
+
+This research describes an adaptive inference approach in which an LLM spends more or less compute depending on question difficulty.
+
+Relevance to this project:
+
+- aligns closely with test-time budget allocation
+- supports difficulty-aware inference policies
+- suggests fixed reasoning budgets are often inefficient
+
+Likely lead group and researchers:
+
+- LIDS, IDSS, and MechE, with MIT-IBM Watson AI Lab collaboration
+- Navid Azizan as the principal MIT lead
+- Young-Jin Park, Kristjan Greenewald, Kaveh Alim, and Hao Wang as key collaborators
+
+**MIT researchers develop an efficient way to train more reliable AI agents (MIT News, November 22, 2024)**  
+Source: https://news.mit.edu/2024/mit-researchers-develop-efficiency-training-more-reliable-ai-agents-1122
+
+This work shows that reliable agents can be trained with much less data than standard methods in simulated environments.
+
+Relevance to this project:
+
+- broadens cost optimization beyond inference into data efficiency and policy training
+- supports the idea that better control policies can reduce end-to-end cost
+
+Likely lead group and researchers:
+
+- LIDS, IDSS, and CEE
+- Cathy Wu as the main lead
+- Jung-Hoon Cho, Vindula Jayawardana, and Sirui Li as key collaborators
+
+### 3. CSAIL / EECS: training efficiency and smaller-model reasoning
+
+**Synthetic imagery sets new bar in AI training efficiency (MIT News, November 20, 2023)**  
+Source: https://news.mit.edu/2023/synthetic-imagery-sets-new-bar-ai-training-efficiency-1120
+
+This work shows that synthetic image training can outperform some real-image alternatives at scale, reducing reliance on expensive real-world data pipelines.
+
+Relevance to this project:
+
+- expands the cost lens to data creation and training pipelines
+- shows that lower-cost inputs can sometimes improve downstream performance
+
+Likely lead group and researchers:
+
+- CSAIL and EECS
+- Lijie Fan as lead researcher
+- Phillip Isola as principal investigator
+
+MIT also has adjacent efficiency work worth tracking:
+
+- `CodeSteer` from Chuchu Fan's LIDS group: https://news.mit.edu/2025/smart-coach-helps-llms-switch-between-text-and-code-0717
+- `DisCIPL` from CSAIL with Gabriel Grand, Jacob Andreas, and Joshua Tenenbaum: https://news.mit.edu/2025/new-method-enables-small-language-models-solve-complex-reasoning-tasks-1212
+- scalable self-learners from CSAIL with Hongyin Luo, James Glass, and Yoon Kim: https://news.mit.edu/2023/language-models-scalable-self-learners-0608
+
+### 4. MIT Economics / MIT Sloan / IDE: labor, organization, and model-market economics
+
+**Experimental evidence on the productivity effects of generative artificial intelligence (MIT News coverage, July 14, 2023)**  
+Source: https://news.mit.edu/2023/study-finds-chatgpt-boosts-worker-productivity-writing-0714
+
+This study reports that generative AI improved speed and quality for selected writing tasks.
+
+Relevance to this project:
+
+- widens the notion of cost from API price to labor time
+- provides evidence that indirect cost and human productivity should be part of evaluation
+
+Likely lead group and researchers:
+
+- MIT Department of Economics
+- Shakked Noy and Whitney Zhang
+
+**Generative AI and the Nature of Work / Beyond Productivity (MIT IDE, August 11, 2025)**  
+Source: https://ide.mit.edu/insights/beyond-productivity-genai-and-the-changing-nature-of-work/
+
+This line of work studies how generative AI changes the composition of work, including coordination burden and task allocation.
+
+Relevance to this project:
+
+- supports adding organizational and coordination cost to indirect-cost accounting
+- helps connect benchmark optimization to real deployment environments
+
+Likely lead group and researchers:
+
+- MIT Initiative on the Digital Economy
+- Frank Nagle and collaborators from GitHub, Microsoft, the Linux Foundation, and UC Irvine
+
+**MIT Sloan coverage of open-model economics (January 20, 2026)**  
+Source: https://mitsloan.mit.edu/ideas-made-to-matter/ai-open-models-have-benefits-so-why-arent-they-more-widely-used
+
+This work highlights the economic importance of open-model substitution and the gap between technical availability and enterprise adoption.
+
+Relevance to this project:
+
+- directly supports model-selection and routing questions
+- suggests that switching and adoption costs matter alongside token price
+
+Likely lead group and researchers:
+
+- MIT Initiative on the Digital Economy and MIT Sloan
+- Frank Nagle and Daniel Yue
+
+### 5. MIT Industrial Performance Center: field evidence on deployment
+
+**Generative AI and the Work of the Future working group (MIT News, March 28, 2024)**  
+Source: https://news.mit.edu/2024/mit-launches-working-group-generative-ai-and-work-of-the-future-0328
+
+This initiative aims to collect organizational evidence on how firms adopt generative AI and how jobs, skills, and training change in practice.
+
+Relevance to this project:
+
+- offers a path from benchmark evidence to real organizational cost accounting
+- is especially relevant for hidden deployment, governance, and reskilling costs
+
+Likely lead group and researchers:
+
+- MIT Industrial Performance Center
+- Ben Armstrong, Julie Shah, and Kate Kellogg
+
+For a broader MIT-specific research landscape with labs, lead researchers, and adjacent work, see `mit-research-landscape.md`.
+
 ## Synthesis
 
 These papers suggest that prior work on AI cost optimization can be grouped into four main directions:
