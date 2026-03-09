@@ -246,7 +246,7 @@ Likely lead group and researchers:
 - MIT Industrial Performance Center
 - Ben Armstrong, Julie Shah, and Kate Kellogg
 
-For a broader MIT-specific research landscape with labs, lead researchers, and adjacent work, see `mit-research-landscape.md`.
+For a broader MIT-specific research landscape with labs, lead researchers, and adjacent work, see `mit-research-landscape.md`. For the narrower MIT System Design and Management subset, see `mit-sdm-related-work.md`.
 
 ## Synthesis
 
