@@ -1,0 +1,21 @@
+scenario_id: document_extraction_ops
+display_name: Document Extraction and Back-Office Processing
+description: High-volume structured extraction workflow with cleanup queues and selective review.
+task_families:
+  - extraction
+quality_gate:
+  metric: f1
+  threshold_type: minimum
+  threshold_value: 0.9
+secondary_quality_gates:
+  precision_min: 0.92
+  recall_min: 0.88
+cost_assumptions:
+  human_review_minutes:
+    low: 2
+    default: 4
+    high: 6
+  latency_sensitivity: low_to_medium
+  downstream_failure_cost: medium_to_high
+  validation_cost: low_to_medium
+weighting_profile: mixed_operations

@@ -1,0 +1,18 @@
+scenario_id: classification_routing_ops
+display_name: Classification and Routing Operations
+description: Fast, high-volume routing workflow where queue load and escalation rate can dominate spend.
+task_families:
+  - classification
+quality_gate:
+  metric: accuracy
+  threshold_type: minimum
+  threshold_value: 0.85
+cost_assumptions:
+  human_review_minutes:
+    low: 1
+    default: 2
+    high: 4
+  latency_sensitivity: medium_to_high
+  downstream_failure_cost: medium
+  queue_saturation_risk: high
+weighting_profile: automation_heavy_volume

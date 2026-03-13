@@ -1,0 +1,18 @@
+scenario_id: code_generation_repair
+display_name: Code Generation and Repair
+description: Reliability-critical coding workflow where failed outputs create debugging and developer interruption cost.
+task_families:
+  - coding
+quality_gate:
+  metric: pass_rate
+  threshold_type: minimum
+  threshold_value: 1.0
+cost_assumptions:
+  human_review_minutes:
+    low: 8
+    default: 12
+    high: 15
+  latency_sensitivity: medium
+  downstream_failure_cost: high
+  verification_cost: low
+weighting_profile: reliability_critical_knowledge_work
