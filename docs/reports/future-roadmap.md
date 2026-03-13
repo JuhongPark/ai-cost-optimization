@@ -2,18 +2,24 @@
 
 ## Next Research Steps
 
-### 1. Build benchmark-ready task sets
+### 1. Freeze the first empirical cycle
+
+- adopt the three core empirical questions defined in `docs/experiments/first-empirical-cycle-plan.md`
+- declare which policy comparisons are in scope for coding, classification, and extraction
+- define which scenario-cost profile will be used for weighted comparisons
+
+### 2. Build benchmark-ready task sets
 
 - select exact task subsets for coding, classification, extraction, and agent workflows
 - document data access and evaluation scripts
 
-### 2. Implement logging-compatible experiment templates
+### 3. Implement logging-compatible experiment templates
 
 - define machine-readable policy ids
 - define JSON episode records
 - define analysis scripts for frontier reporting
 
-### 3. Run the first comparison set
+### 4. Run the first comparison set
 
 - strong-model single pass
 - cheap-model single pass
@@ -22,13 +28,13 @@
 - verification-enabled policy
 - full automation vs selective HITL vs human-first
 
-### 4. Extend indirect-cost measurement
+### 5. Extend indirect-cost measurement
 
 - estimate human review time more realistically
 - define recovery-step accounting
 - define confidence and escalation triggers
 
-### 5. Separate research tracks
+### 6. Separate research tracks
 
 - workflow-level policy optimization
 - systems-level serving optimization

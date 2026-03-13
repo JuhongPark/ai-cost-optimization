@@ -6,5 +6,6 @@ This directory stores reading notes, related work summaries, and external refere
 - `literature-map.md`: cost-category and mechanism-based map of relevant prior work
 - `gap-analysis.md`: research gaps relative to workflow-level AI cost optimization
 - `human-oversight-optimization.md`: focused note on human allocation versus human elimination
+- `human-oversight-literature-review.md`: expanded literature synthesis for deferral, scalable oversight, and review economics
 - `mit-research-landscape.md`: MIT labs, programs, and researchers relevant to AI cost optimization
 - `mit-sdm-related-work.md`: MIT SDM-specific related work relevant to deployment, resilience, and commercialization
