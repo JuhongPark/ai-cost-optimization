@@ -3,7 +3,9 @@
 This directory stores synthesis documents, recommendations, and higher-level research outputs.
 
 - `comparative-analysis.md`: comparison framework for optimization strategies
+- `benchmark-report-template.md`: template for benchmark-level reporting in the first empirical cycle
 - `conclusion-plan.md`: definition of done for reaching a first research conclusion
+- `cross-benchmark-synthesis-template.md`: template for the cross-benchmark write-up after the first empirical cycle
 - `final-cycle-summary.md`: cross-benchmark summary for the completed local first-cycle run
 - `industry-scenarios.md`: deployment scenarios that ground the framework in realistic operations
 - `practitioner-guidance.md`: practical guidance for cost-efficient AI usage
