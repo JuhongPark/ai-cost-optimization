@@ -1,0 +1,39 @@
+study_id: first_empirical_cycle
+display_name: First Empirical Cycle
+description: Initial cross-benchmark comparison focused on threshold-constrained policy choice and selective HITL.
+primary_questions:
+  - Which baseline policy class is cheapest under a fixed quality threshold?
+  - Which policy lever most changes the cost-quality frontier?
+  - When is selective HITL cheaper than full automation or human-first handling?
+reporting:
+  default_mode: cost_vector
+  comparison_rule: threshold_constrained_cost_minimization
+  weighted_profiles:
+    - automation_heavy_volume
+    - reliability_critical_knowledge_work
+    - mixed_operations
+benchmark_groups:
+  - benchmark_id: coding_humaneval_v1
+    scenario_id: code_generation_repair
+    in_scope_policies:
+      - strong_model_single_pass
+      - cheap_model_single_pass
+      - cheap_model_verifier_hitl
+      - verifier_gated_hitl
+      - human_first
+  - benchmark_id: classification_mmlu_subset_v1
+    scenario_id: classification_routing_ops
+    in_scope_policies:
+      - strong_model_single_pass
+      - cheap_model_single_pass
+      - difficulty_routing
+      - confidence_gated_hitl
+      - human_first
+  - benchmark_id: extraction_structured_fields_v1
+    scenario_id: document_extraction_ops
+    in_scope_policies:
+      - strong_model_single_pass
+      - cheap_model_single_pass
+      - tool_assisted_extraction
+      - verifier_gated_hitl
+      - human_first
