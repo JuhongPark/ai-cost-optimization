@@ -279,3 +279,34 @@ Additional optimization directions can follow after the first comparison set is 
 - baseline experimental design
 - optimization strategy comparisons
 - practical guidance for AI cost optimization
+
+## Related Documents
+
+Frameworks that operationalize this plan:
+
+- [`frameworks/cost-taxonomy.md`](frameworks/cost-taxonomy.md) — direct vs indirect cost decomposition.
+- [`frameworks/evaluation-framework.md`](frameworks/evaluation-framework.md) — quality-constrained total-cost evaluation.
+- [`frameworks/evaluation-objectives.md`](frameworks/evaluation-objectives.md) — candidate optimization objectives.
+- [`frameworks/policy-design-space.md`](frameworks/policy-design-space.md) and [`frameworks/strategy-taxonomy.md`](frameworks/strategy-taxonomy.md) — design axes and strategy categories.
+- [`frameworks/logging-schema.md`](frameworks/logging-schema.md), [`frameworks/cost-aggregation.md`](frameworks/cost-aggregation.md), and [`frameworks/failure-taxonomy.md`](frameworks/failure-taxonomy.md) — operational schemas.
+- [`frameworks/scenario-cost-assumptions.md`](frameworks/scenario-cost-assumptions.md) — scenario-level cost assumptions.
+
+Experiments that execute this plan:
+
+- [`experiments/benchmark-candidates.md`](experiments/benchmark-candidates.md), [`experiments/benchmark-selection-rationale.md`](experiments/benchmark-selection-rationale.md), and [`experiments/benchmark-blueprint.md`](experiments/benchmark-blueprint.md) — benchmark design.
+- [`experiments/policy-templates.md`](experiments/policy-templates.md), [`experiments/first-empirical-cycle-plan.md`](experiments/first-empirical-cycle-plan.md), [`experiments/policy-comparison-matrix.md`](experiments/policy-comparison-matrix.md), and [`experiments/execution-checklist.md`](experiments/execution-checklist.md) — first empirical cycle.
+- [`experiments/human-oversight-study-design.md`](experiments/human-oversight-study-design.md) — focused human-oversight sub-study.
+
+References and reading notes:
+
+- [`references/prior-work.md`](references/prior-work.md), [`references/literature-map.md`](references/literature-map.md), and [`references/gap-analysis.md`](references/gap-analysis.md) — prior work and gaps.
+- [`references/human-oversight-optimization.md`](references/human-oversight-optimization.md) and [`references/human-oversight-literature-review.md`](references/human-oversight-literature-review.md) — human oversight notes.
+- [`references/mit-research-landscape.md`](references/mit-research-landscape.md) and [`references/mit-sdm-related-work.md`](references/mit-sdm-related-work.md) — MIT landscape.
+- [`references/industry-trends-2026.md`](references/industry-trends-2026.md) and [`references/industry-updates-2026-04.md`](references/industry-updates-2026-04.md) — industry trends and latest delta.
+
+Reports and synthesis:
+
+- [`reports/research-synthesis.md`](reports/research-synthesis.md), [`reports/comparative-analysis.md`](reports/comparative-analysis.md), and [`reports/practitioner-guidance.md`](reports/practitioner-guidance.md) — synthesis and operational takeaways.
+- [`reports/industry-scenarios.md`](reports/industry-scenarios.md) and [`reports/final-cycle-summary.md`](reports/final-cycle-summary.md) — applied scenarios and the completed first-cycle summary.
+- [`reports/benchmark-report-template.md`](reports/benchmark-report-template.md) and [`reports/cross-benchmark-synthesis-template.md`](reports/cross-benchmark-synthesis-template.md) — reporting templates.
+- [`reports/conclusion-plan.md`](reports/conclusion-plan.md), [`reports/research-questions-v2.md`](reports/research-questions-v2.md), [`reports/research-backlog.md`](reports/research-backlog.md), and [`reports/future-roadmap.md`](reports/future-roadmap.md) — forward-looking documents.
