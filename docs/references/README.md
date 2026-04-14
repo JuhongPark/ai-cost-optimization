@@ -9,3 +9,5 @@ This directory stores reading notes, related work summaries, and external refere
 - `human-oversight-literature-review.md`: expanded literature synthesis for deferral, scalable oversight, and review economics
 - `mit-research-landscape.md`: MIT labs, programs, and researchers relevant to AI cost optimization
 - `mit-sdm-related-work.md`: MIT SDM-specific related work relevant to deployment, resilience, and commercialization
+- `industry-trends-2026.md`: industry trends and model-level pricing landscape as of March 2026
+- `industry-updates-2026-04.md`: delta update covering pricing, inference compression, and FinOps shifts between mid-March and mid-April 2026
